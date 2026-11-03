@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Harvey Parente | Data Science Portfolio</title>
+<meta name="description" content="Harvey Parente. Computer Science student specializing in Data Science. Turning messy datasets into decisions." />
+<meta property="og:title" content="Harvey Parente | Data Science Portfolio" />
+<meta property="og:description" content="Computer Science student specializing in Data Science. Turning messy datasets into decisions." />
+<meta property="og:type" content="website" />
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%230D2A1C"/><polyline points="6,22 13,15 18,19 26,9" fill="none" stroke="%23F6E016" stroke-width="3" stroke-linecap="square"/></svg>' />
+
+<!-- ============================================================
+     HOW TO EDIT THIS SITE
+     1. Open portfolio.js and find >>> EDIT YOUR CONTENT HERE <<<.
+     2. Change the words inside the quotation marks. Keep commas, braces { } and brackets [ ].
+     3. To add a job or activity, copy one { ... } block, paste it, edit it.
+     4. Keep Parente_Resume.pdf in the same folder as this file (the Résumé buttons download it).
+     5. Publish: upload index.html, refinement.css, portfolio.js, motion.js and assets/ together.
+     6. Certificate PDFs go in certifications/; edit PORTFOLIO.certificates in portfolio.js.
+     7. Visitors can press Ctrl+K (⌘K) to jump anywhere or ask questions.
+     ============================================================ -->
+
+<script>
+/* apply saved / system theme before first paint, and enable the entrance animations */
+(function(){
+  var h=document.documentElement; h.classList.add("js");
+  try{
+    var t=localStorage.getItem("theme");
+    if(t==="light"||t==="dark") h.setAttribute("data-theme",t);
+    else if(matchMedia("(prefers-color-scheme:dark)").matches) h.setAttribute("data-theme","dark");
+  }catch(e){}
+})();
+</script>
+
+<link rel="preload" href="assets/fonts/work-sans.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="refinement.css" />
+</head>
+<body>
+<div class="ambient-light" aria-hidden="true"><canvas id="lightRays"></canvas></div>
+<a class="skip-link" href="#top">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">Harvey Parente</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </nav>
+    <div class="bar-tools">
+      <button class="tool" id="paletteBtn" aria-label="Ask me anything or jump to a section">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Ask me anything</span>
+      </button>
+      <button class="tool" id="themeBtn" aria-label="Switch to dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="themeIcon" aria-hidden="true"></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="wrap hero" aria-labelledby="heroTitle">
+    <div>
+      <h1 id="heroTitle" class="rv"></h1>
+      <p class="hero-statement rv">Turning data into decisions.</p>
+      <div class="hero-bottom"><p class="lead rv" id="heroLead"></p>
+      <div class="actions rv" id="heroActions"></div></div>
+    </div>
+    <div class="facts" id="facts"></div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <h2 id="h-projects" class="rv">Selected work</h2>
+      <div class="body" id="projectBody"></div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="sec" id="experience" aria-labelledby="h-exp">
+    <div class="wrap">
+      <h2 id="h-exp" class="rv">Experience</h2>
+      <div class="body" id="expBody"></div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES ============ -->
+  <section class="sec" id="activities" aria-labelledby="h-act">
+    <div class="wrap">
+      <h2 id="h-act" class="rv">Activities</h2>
+      <div class="body" id="actBody"></div>
+    </div>
+  </section>
+
+  <div class="credentials">
+  <!-- ============ EDUCATION ============ -->
+  <section class="sec" id="education" aria-labelledby="h-edu">
+    <div class="wrap">
+      <h2 id="h-edu" class="rv">Education</h2>
+      <div class="body" id="eduBody"></div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="sec" id="skills" aria-labelledby="h-skills">
+    <div class="wrap">
+      <h2 id="h-skills" class="rv">Skills</h2>
+      <dl class="body defs rv" id="skillBody"></dl>
+    </div>
+  </section>
+
+  </div>
+  <!-- ============ CURIOUS ============ -->
+  <section class="sec" id="curious" aria-labelledby="h-cur">
+    <div class="wrap">
+      <h2 id="h-cur" class="rv">What keeps me curious</h2>
+      <ul class="body curious" id="curiousBody"></ul>
+    </div>
+  </section>
+
+  <!-- ============ ASK ============ -->
+  <section class="sec" id="ask" aria-labelledby="h-ask">
+    <div class="wrap">
+      <div class="ask-aside">
+        <h2 id="h-ask" class="rv">Ask my data</h2>
+        <p class="rv" id="askCap"></p>
+        <p class="ask-aside-note rv">A small, local guide to my work. Answers are drawn from this portfolio, so your questions stay in your browser.</p>
+        <div class="ask-prompts rv"><p>A few starting points</p><div class="suggest" id="askChips"></div></div>
+      </div>
+      <div class="panel rv" data-ui>
+        <div class="panel-head">
+          <div class="assistant-identity"><span class="assistant-mark" aria-hidden="true">h.</span><div><b>Harvey’s portfolio guide</b><small>Projects, experience & everything in between</small></div></div>
+          <button class="clear-chat" id="clearChat" type="button" aria-label="Start a new conversation">Reset</button>
+        </div>
+        <div class="chat" id="chatLog" role="log" aria-label="Conversation" aria-live="off"></div>
+        <form class="ask-composer" id="askForm">
+          <label class="ask-label" for="askInput">Your question</label>
+          <div class="ask-row">
+            <input type="text" id="askInput" maxlength="500" placeholder="What would you like to know?" autocomplete="off" />
+            <button class="send" id="askSend" type="submit" aria-label="Send question"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>
+          </div>
+          <p class="ask-footnote">Local answers. No account, no tracking.</p>
+        </form>
+        <div class="sr" id="askLive" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <noscript><div class="wrap" style="padding-top:96px"><p>This page needs JavaScript to show its content. Email <a class="link" href="mailto:harveyparente@gmail.com">harveyparente@gmail.com</a> or download the <a class="link" href="Parente_Resume.pdf">résumé</a>.</p></div></noscript>
+
+</main>
+
+<!-- ============ CONTACT ============ -->
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <p class="contact-say rv" id="contactSay"></p>
+      <div class="contact-links rv">
+        <h2>Get in touch</h2>
+        <ul id="contactLinks"></ul>
+        <div class="clock-row">
+          <canvas id="clockCanvas" width="176" height="176" role="img" aria-label="Analog clock showing the current time in Manila"></canvas>
+          <p id="clockText"></p>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <span id="footName"></span>
+      <a class="link" href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<div class="pal-overlay" id="palOverlay" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="pal">
+    <input type="text" id="palInput" placeholder="Type something or ask the assistant…" autocomplete="off" aria-label="Search commands" />
+    <div class="pal-body" id="palList"></div>
+    <div class="pal-foot"><span>Press a letter anywhere to jump</span><span>Esc to close</span></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="portfolio.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>

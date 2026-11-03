@@ -1,0 +1,9 @@
+Add your certificate PDFs to this folder.
+
+Expected filenames (edit them in PORTFOLIO.certificates in portfolio.js):
+python.pdf
+pmi-project-management-ready.pdf
+android-development-kotlin.pdf
+linux-essentials.pdf
+
+No certificate PDFs were supplied with the original portfolio.

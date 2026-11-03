@@ -1,0 +1,56 @@
+HARVEY PARENTE — PORTFOLIO
+
+Open index.html in a browser. No install or build step is needed.
+To preview through a local server, run: python -m http.server 4173
+
+CONTENT
+Open portfolio.js. The PORTFOLIO object at the top holds your biography,
+experience, education, links, skills, certifications, and assistant answers.
+The assistant uses local keyword matching, not a hosted AI service.
+
+CERTIFICATE PDF LINKS
+Put each PDF in the certifications folder. In portfolio.js, edit:
+
+  certificates: [
+    { title:"Python", href:"certifications/python.pdf" },
+    { title:"PMI Project Management Ready", href:"certifications/pmi-project-management-ready.pdf" },
+    { title:"Android Development with Kotlin", href:"certifications/android-development-kotlin.pdf" },
+    { title:"Linux Essentials", href:"certifications/linux-essentials.pdf" }
+  ]
+
+To add a certificate, add another { title:"...", href:"..." } object.
+Keep the Certifications items list in PORTFOLIO.skills in sync with the titles
+so the assistant also knows the names of your new certificates.
+The certificate PDFs have not been supplied and are not included.
+
+RESUME
+Your updated resume is included as Parente_Resume.pdf next to index.html.
+All resume download links use this file. To update it again, replace that PDF,
+or change PORTFOLIO.resume to a different filename or URL.
+
+PROJECT
+The GeneScope title, image, and project link open:
+https://genescope.online/login
+Replace assets/genescope.png with a newer screenshot when needed.
+
+DESIGN
+All colors, layout, and interaction styles are in refinement.css.
+The local Work Sans font lives in assets/fonts/work-sans.woff2.
+Animated light rays, staggered entrances, navigation states, and project expansion
+are progressively enhanced in motion.js. No external animation library is required.
+Light rays render at up to 30fps on desktop and 24fps on phones. They pause when
+the tab is hidden and become a static background for reduced-motion preferences.
+Reduced motion preferences are respected. The light/dark toggle is retained.
+
+PUBLISH
+Upload index.html, portfolio.js, motion.js, refinement.css, assets/, certifications/,
+and your resume PDF together to your static host.
+Do not upload .taste-skill/ or this editing guide.
+
+ASSETS
+GeneScope screenshot: supplied by Harvey Parente.
+Python, Java, C++, MATLAB, PHP, HTML5, CSS3, and Kotlin logos: Devicon.
+Source: https://github.com/devicons/devicon
+License: assets/icons/LICENSE.txt
+SQL and XML have generic symbols because they are standards, not brands.
+The logos identify technologies; they do not imply certification or endorsement.
